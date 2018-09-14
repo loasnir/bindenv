@@ -1,0 +1,13 @@
+#! /usr/bin/env ruby
+
+# Read sdtin
+str = STDIN.read
+
+# Get env keys
+keys = str.scan(/\${?([a-zA-Z0-9_]+)}?/).flatten.uniq
+
+# Replace env
+keys.each_with_object(str) { |k, s| s.gsub!(/\${?#{k}}?/, ENV[k]) if ENV.key?(k) }
+
+# Write Stdout
+STDOUT.puts str

@@ -1,0 +1,57 @@
+version: '3.4'
+services:
+  alpine:
+    container_name: bindenv_alpine
+    image: alpine
+    working_dir: /bindenv
+    environment:
+      TEST_ENV: alpine
+    volumes:
+      - ./bindenv:/bin/bindenv
+      - ./entrypoint.sh:/bin/start
+      - ./volumes:/bindenv
+    command: /bin/sh -c /bin/start
+  ruby23:
+    container_name: bindenv_ruby23
+    image: ruby:2.3-alpine
+    working_dir: /bindenv
+    environment:
+      TEST_ENV: ruby23
+    volumes:
+      - ./bindenv:/bin/bindenv
+      - ./entrypoint.sh:/bin/start
+      - ./volumes:/bindenv
+    command: /bin/sh -c /bin/start
+  ruby24:
+    container_name: bindenv_ruby24
+    image: ruby:2.4-alpine
+    working_dir: /bindenv
+    environment:
+      TEST_ENV: ruby24
+    volumes:
+      - ./bindenv:/bin/bindenv
+      - ./entrypoint.sh:/bin/start
+      - ./volumes:/bindenv
+    command: /bin/sh -c /bin/start
+  ruby25:
+    container_name: bindenv_ruby25
+    image: ruby:2.5-alpine
+    working_dir: /bindenv
+    environment:
+      TEST_ENV: ruby25
+    volumes:
+      - ./bindenv:/bin/bindenv
+      - ./entrypoint.sh:/bin/start
+      - ./volumes:/bindenv
+    command: /bin/sh -c /bin/start
+  ruby26:
+    container_name: bindenv_ruby26
+    image: ruby:2.6-rc-alpine
+    working_dir: /bindenv
+    environment:
+      TEST_ENV: ruby26
+    volumes:
+      - ./bindenv:/bin/bindenv
+      - ./entrypoint.sh:/bin/start
+      - ./volumes:/bindenv
+    command: /bin/sh -c /bin/start
