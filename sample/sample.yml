@@ -1,6 +1,0 @@
-database:
-  HOST: ${HOST}
-  PORT: $PORT
-  USERNAME: "${USERNAME}"
-  PASSWORD: '${PASSWORD}'
-  DATABASE: "$DATABASE"
